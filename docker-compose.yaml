@@ -2,8 +2,8 @@ version: "3.8"
 services:
   postgres:
     image: postgres
-    volumes:
-      - ./data/db:/var/lib/postgresql/data
+    volumes: 
+      - data:/data/db
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
@@ -21,4 +21,7 @@ services:
     stdin_open: true
     tty: true
     depends_on:
-      - api
+      - api 
+
+volumes: 
+  data:
