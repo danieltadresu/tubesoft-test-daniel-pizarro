@@ -15,7 +15,7 @@ const Stopwatch = sequelize.define("stopwatch", {
     type: Sequelize.DATE,
   },
   time: {
-    type: Sequelize.DATE,
+    type: Sequelize.STRING,
   },
 });
 
