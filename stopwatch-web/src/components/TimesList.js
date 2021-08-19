@@ -2,8 +2,12 @@ import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Alert from "@material-ui/lab/Alert";
+import AlertTitle from "@material-ui/lab/AlertTitle";
 
 const useStyles = makeStyles({
+  alert: {
+    margin: "1rem",
+  },
   title: {
     margin: "0",
     padding: "0",
@@ -39,11 +43,22 @@ const TimesList = () => {
       alignItems="center"
       style={{ paddingTop: "14rem" }}
     >
-      {allSavedTimes.map((timeData) => (
-        <Alert variant="outlined" severity="info">
-          <p className={classes.title}>{timeData.time}</p>
-        </Alert>
-      ))}
+      {allSavedTimes &&
+        allSavedTimes.map((timeData) => (
+          <>
+            <Alert
+              variant="outlined"
+              severity="info"
+              className={classes.alert}
+              key={timeData.id}
+            >
+              <AlertTitle>ID {timeData.id}</AlertTitle>
+              <p className={classes.title}>
+                Saved Time — <strong>{timeData.time}</strong>
+              </p>
+            </Alert>
+          </>
+        ))}
     </Grid>
   );
 };

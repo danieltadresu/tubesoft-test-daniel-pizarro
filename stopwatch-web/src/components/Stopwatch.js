@@ -72,16 +72,15 @@ const Stopwatch = (props) => {
 
   const handleSubmit = async () => {
     setIsActive(false);
-    const response = await fetch("http://localhost:80/stopwatch", {
+    await fetch("http://localhost:80/stopwatch", {
       method: "POST",
       body: JSON.stringify({
-        time: timer,
+        time: formatTime(),
       }),
       headers: {
         "Content-Type": "application/json",
       },
     });
-    const resData = await response.json();
     handleReset();
   };
 
