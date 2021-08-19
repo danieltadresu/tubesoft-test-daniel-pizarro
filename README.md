@@ -25,8 +25,9 @@ On the root of your local project
 ```
 $ cd /stopwatch-web
 ```
-
-
+```
+$ npm install
+```
 ```
 $ npm test
 ```
