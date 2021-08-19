@@ -174,11 +174,12 @@ const Stopwatch = (props) => {
 };
 
 Stopwatch.propTypes = {
-  showStopwatch: PropTypes.bool.isRequired,
+  showStopwatch: PropTypes.bool,
   setShowStopwatch: PropTypes.func,
 };
 
 Stopwatch.defaultProps = {
+  showStopwatch: true,
   setShowStopwatch: () => {},
 };
 
