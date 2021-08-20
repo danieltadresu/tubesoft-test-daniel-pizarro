@@ -36,15 +36,10 @@ const TimesList = (props) => {
 
   const fetchData = async () => {
     try {
-      // const response = await fetch("http://localhost:80/stopwatch");
-      // const resData = await response.json();
+      const response = await fetch("http://localhost:80/stopwatch");
+      const resData = await response.json();
       setChecked(true);
-      setAllSavedTimes([
-        {
-          id: 1,
-          time: 1,
-        },
-      ]);
+      setAllSavedTimes(resData.data);
     } catch (error) {
       console.log(`error`, error);
     }
