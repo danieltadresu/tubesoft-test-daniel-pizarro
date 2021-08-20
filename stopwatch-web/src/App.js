@@ -25,7 +25,7 @@ const App = () => {
           setShowStopwatch={setShowStopwatch}
         />
       ) : (
-        <TimesList />
+        <TimesList setShowStopwatch={setShowStopwatch} />
       )}
     </div>
   );
